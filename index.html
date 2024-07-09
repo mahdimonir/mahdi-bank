@@ -12,7 +12,7 @@
     <header></header>
     <main>
         <div class="container" id="login-area">
-            <h1 class="text-center">Welcome to Mahdi Bank</h1>
+            <h1 class="text-center">Welcome to Mahdi's Bank</h1>
             <div class="submit-area">
                 <h4>Login</h4>
                 <input type="text" class="form-control" placeholder="Enter your Email">
@@ -39,7 +39,7 @@
                 <div class="col-md-4">
                     <div class="balance status">
                         <h5>Balance</h5>
-                        <h2>$ <span id="currentBalance">1240</span></h2>
+                        <h2>$ <span id="currentBalance">1000</span></h2>
                     </div>
                 </div>
             </div>
@@ -90,13 +90,12 @@
         const withdrawBtn = document.getElementById("addWithdraw");
         withdrawBtn.addEventListener("click", function(){
             const withdrawNumber = getInputNumber("withdrawAmount");
-            console.log(withdrawNumber);
 
-            // updateSpanText("currentWithdraw", depositNumber);
+            updateSpanText("currentWithdraw", withdrawNumber);
 
-            // updateSpanText("currentBalance", depositNumber);
+            updateSpanText("currentBalance", -1 * withdrawNumber);
 
-            // document.getElementById("withdrawAmount").value = "";
+            document.getElementById("withdrawAmount").value = "";
         })
 
         function getInputNumber(id) {
